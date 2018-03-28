@@ -2,18 +2,35 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Title from './components/Title';
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">zaratedev</h1>
-        </header>
-        <p className="App-intro">
-          My frist App React.
-        </p>
-      </div>
+      <section>
+        <div>
+          <div>
+            <Title></Title>
+            <button>Crear cuenta</button>
+            <div>
+              <ul>
+                <li>
+                  <h3>Calificaciones con emociones</h3>
+                  <p>Califica tus cursos favoritos.</p>
+                </li>
+                <li>
+                  <h3>¿Sin internet? Sin problemas</h3>
+                  <p>Programacion jje funciona sin internet.</p>
+                </li>
+                <li>
+                  <h3>Tecnologia favorita</h3>
+                  <p>Define tu lista de tecnologias que quisieras aprender.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     );
   }
 }
