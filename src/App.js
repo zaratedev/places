@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import RaisedButton from 'material-ui/RaisedButton';
 import './App.css';
 
 import Title from './components/Title';
@@ -7,30 +8,19 @@ import Title from './components/Title';
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      numero: 0
-    };
-
-    this.updateNumero = this.updateNumero.bind(this);
-
-  }
-
-  updateNumero(){
-    this.setState({
-      numero: this.state.numero +  1
-    });
   }
 
   render() {
     return (
-      <section>
-        <div>
-          <div>
-            <Title></Title>
-            <h2>{this.state.numero}</h2>
-            <button onClick={ this.updateNumero }>Crear cuenta</button>
-            <img src={process.env.PUBLIC_URL + '/images/top-background.png'} height="300" />
+      <MuiThemeProvider>
+        <div className="Header-background">
+          <div className="container">
+            <div className="Header-main">
+              <Title></Title>
+              <RaisedButton label="Crear cuenta gratuita" secondary />
+              <img src={process.env.PUBLIC_URL + '/images/top-background.png'} className="Header-ilustration" />
+            </div>
+
             <div>
               <ul>
                 <li>
@@ -49,7 +39,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-      </section>
+      </MuiThemeProvider>
     );
   }
 }
